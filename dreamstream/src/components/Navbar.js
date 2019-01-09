@@ -5,7 +5,7 @@ const Navbar = (props) => {
     return (
         <nav className="nav-wrapper black lighten-3">
             <div className="container">
-                <a href="/" className="brand-logo">Dream Stream</a>
+                    <a href="/" className="brand-logo"><img src="dreamstream2color27.png" alt="dslogo"></img></a>
                 <ul className="right">
                     <li><NavLink to="/">Home</NavLink></li>
                     <li><NavLink to="/search">Search</NavLink></li>
