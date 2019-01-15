@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 
 class Home extends Component {
+    login() {
+        this.props.auth.login();
+    }
     render() {
+        const { isAuthenticated } = this.props.auth;
         return (
             <div className="container home">
                 <div className="row">
@@ -25,7 +30,29 @@ class Home extends Component {
                 </div>
 
                 <div className="row center">
-                    <button className="center btn btn-large light-blue">Get Started</button>
+                    {
+                        isAuthenticated() && (
+                            <button className="center btn btn-large light-blue white-text">
+                                <NavLink to="/mydreamstream">
+                                    Go to MyDreamStream
+                                </NavLink>
+                            </button>
+                        )
+                    }
+                    {
+                        !isAuthenticated() && (
+                            <button className="center btn btn-large light-blue white-text">
+                                You are not logged in! Please{' '}
+                                <a
+                                    style={{ cursor: 'pointer '}}
+                                    onClick={this.login.bind(this)}
+                                >
+                                    Log In or Sign-Up
+                                </a>
+                                {' '}to get started.
+                            </button>
+                        )
+                    }
                 </div>
             </div>
         )
