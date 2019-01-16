@@ -11,6 +11,10 @@ const Navbar = (props) => {
                     <li><NavLink to="/search">Search</NavLink></li>
                     <li><NavLink to="/mydreamstream">My DreamStream</NavLink></li>
                     <li><NavLink to="/contact">Contact</NavLink></li>
+<<<<<<< HEAD:dreamstream/src/components/Navbar.js
+=======
+                    <li><button className="light-blue text-white">Login</button></li>
+>>>>>>> 30af6092a04422a373ae211e258563b04c2611e2:dreamstream/src/components/Navbar/Navbar.js
                 </ul>
             </div>
         </nav>
