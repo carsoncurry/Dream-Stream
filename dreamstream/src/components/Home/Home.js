@@ -32,24 +32,17 @@ class Home extends Component {
                 <div className="row center">
                     {
                         isAuthenticated() && (
-                            <button className="center btn btn-large light-blue white-text">
-                                <NavLink to="/mydreamstream">
-                                    Go to MyDreamStream
+                            <button className="waves-effect waves-light center btn btn-large light-blue white-text loggedin-btn">
+                                <NavLink to="/mydreamstream" className="white-text">
+                                    Welcome Back! Go to My DreamStream
                                 </NavLink>
                             </button>
                         )
                     }
                     {
                         !isAuthenticated() && (
-                            <button className="center btn btn-large light-blue white-text">
-                                You are not logged in! Please{' '}
-                                <a
-                                    style={{ cursor: 'pointer '}}
-                                    onClick={this.login.bind(this)}
-                                >
-                                    Log In or Sign-Up
-                                </a>
-                                {' '}to get started.
+                            <button className="waves-effect waves-light center btn btn-large light-blue white-text loggedout-btn" onClick={this.login.bind(this)}>
+                                Log In or Create Your DreamStream Profile
                             </button>
                         )
                     }

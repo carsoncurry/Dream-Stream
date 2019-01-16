@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
+import './App.css';
 
 class App extends Component {
   goTo(route) {
@@ -31,29 +32,33 @@ class App extends Component {
           <div className="container">
             <div className="brand-logo"><NavLink to="/home"><img src="../images/dreamstream2color27.png" alt="dslogo" /></NavLink></div>
             <ul className="right">
-              <li><NavLink to="/home">Home</NavLink></li>
-              <li><NavLink to="/search">Search</NavLink></li>
-              <li><NavLink to="/mydreamstream">My DreamStream</NavLink></li>
-              <li><NavLink to="/contact">Contact</NavLink></li>
+              <li><NavLink to="/home" activeClassName="is-active" className="waves-effect waves-light">Home</NavLink></li>
+              <li><NavLink to="/search" activeClassName="is-active" className="waves-effect waves-light">Search</NavLink></li>
+              <li><NavLink to="/mydreamstream" activeClassName="is-active" className="waves-effect waves-light">My DreamStream</NavLink></li>
+              <li><NavLink to="/contact" activeClassName="is-active" className="waves-effect waves-light">Contact</NavLink></li>
               {
                 !isAuthenticated() && (
-                  <li
-                    id="qsLoginBtn"
-                    className="waves-effect waves-light btn light-blue white-text"
-                    onClick={this.login.bind(this)}
-                  >
-                    Log In
+                  <li className="login">
+                    <button 
+                      id="qsLoginBtn"
+                      className="waves-effect waves-light btn light-blue white-text"
+                      onClick={this.login.bind(this)}
+                    >
+                      Log In / Sign Up
+                    </button>
                   </li>
                 )
               }
               {
                 isAuthenticated() && (
-                  <li
-                    id="qsLogoutBtn"
-                    className="waves-effect waves-light btn light-blue white-text"
-                    onClick={this.logout.bind(this)}
-                  >
-                    Log Out
+                  <li className="logout">
+                    <button
+                      id="qsLogoutBtn"
+                      className="waves-effect waves-light btn light-blue white-text"
+                      onClick={this.logout.bind(this)}
+                    >
+                      Log Out
+                    </button>
                   </li>
                 )
               }
@@ -61,40 +66,9 @@ class App extends Component {
           </div>
         </nav>
       </div>
+
     )
   }
 }
 
-export default App;
-
-// import React, { Component } from 'react';
-// import { BrowserRouter, Route, Switch } from 'react-router-dom';
-// import Navbar from './components/Navbar/Navbar';
-// import Home from './components/Home/Home';
-// import Search from './components/Search/Search';
-// import MyDreamStream from './components/MyDreamStream/MyDreamStream';
-// import Contact from './components/Contact/Contact';
-// import Auth from './components/Auth/Auth';
-
-// const auth = new Auth();
-// auth.login();
-
-// class App extends Component {
-//   render() {
-//     return (
-//       <BrowserRouter>
-//         <div className="App">
-//           <Navbar />
-//           <Switch>
-//             <Route exact path="/" component={ Home } />
-//             <Route path="/search" component={ Search } />
-//             <Route path="/mydreamstream" component={ MyDreamStream } />
-//             <Route path="/contact" component={ Contact } />
-//           </Switch>
-//         </div>
-//       </BrowserRouter>
-//     );
-//   }
-// }
-
-// export default App;
+export default withRouter(App);
