@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
 import './index.css';
-import { makeMainRoutes } from './components/routes';
+import { makeMainRoutes } from './components/pages/routes';
 import * as serviceWorker from './serviceWorker';
 
 const routes = makeMainRoutes();
