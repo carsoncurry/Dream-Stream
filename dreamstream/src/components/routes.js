@@ -22,7 +22,7 @@ export const makeMainRoutes = () => {
         <Router history={history}>
             <div>
                 <Route path="/" render={(props) => <App auth={auth} {...props} />} />
-                <Route path="/home" render={(props) => <Home auth={auth} {...props} />} />
+                <Route exact path="/" render={(props) => <Home auth={auth} {...props} />} />
                 <Route path="/search" render={(props) => <Search auth={auth} {...props} />} />
                 <Route path="/mydreamstream" render={(props) => <MyDreamStream auth={auth} {...props} />} />
                 <Route path="/contact" render={(props) => <Contact auth={auth} {...props} />} />

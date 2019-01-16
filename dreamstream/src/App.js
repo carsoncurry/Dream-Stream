@@ -30,9 +30,9 @@ class App extends Component {
       <div>
         <nav className="nav-wrapper black lighten-3">
           <div className="container">
-            <div className="brand-logo"><NavLink to="/home"><img src="../images/dreamstream2color27.png" alt="dslogo" /></NavLink></div>
+            <div className="brand-logo"><NavLink to="/"><img src="../images/dreamstream2color27.png" alt="dslogo" /></NavLink></div>
             <ul className="right">
-              <li><NavLink to="/home" activeClassName="is-active" className="waves-effect waves-light">Home</NavLink></li>
+              <li><NavLink to="/" activeClassName="is-active" className="waves-effect waves-light">Home</NavLink></li>
               <li><NavLink to="/search" activeClassName="is-active" className="waves-effect waves-light">Search</NavLink></li>
               <li><NavLink to="/mydreamstream" activeClassName="is-active" className="waves-effect waves-light">My DreamStream</NavLink></li>
               <li><NavLink to="/contact" activeClassName="is-active" className="waves-effect waves-light">Contact</NavLink></li>
