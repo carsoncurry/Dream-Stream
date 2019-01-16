@@ -1,0 +1,15 @@
+li:hover {
+    background: darkslategray;
+}
+
+.is-active {
+    background: darkslategray;
+}
+
+.login:hover, .logout:hover {
+    background: transparent;
+}
+
+.login, .logout {
+    margin-left: 15px;
+}

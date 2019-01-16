@@ -17,9 +17,8 @@ class MyDreamStream extends Component {
                 </div>
                 <div className="row">
                     <form className="white-text">
-                        <label className="white-text">Search Streaming Sites</label>
-                        <input className="white-text" type="text"/>
-                        <button className="btn btn-primary light-blue">Submit</button>
+                        <input placeholder="Search by Series, Movie, Channel, Genre or Streaming Service" className="white-text" type="text"/>
+                        <button className="waves-effect waves-light btn btn-primary light-blue">Submit</button>
                     </form>
                 </div>
             </div>
