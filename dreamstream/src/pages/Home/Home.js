@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 
 class Home extends Component {
+    login() {
+        this.props.auth.login();
+    }
     render() {
+        const { isAuthenticated } = this.props.auth;
         return (
             <div className="container home">
                 <div className="row">
@@ -25,7 +30,22 @@ class Home extends Component {
                 </div>
 
                 <div className="row center">
-                    <button className="center btn btn-large light-blue">Get Started</button>
+                    {
+                        isAuthenticated() && (
+                            <button className="waves-effect waves-light center btn btn-large light-blue white-text loggedin-btn">
+                                <NavLink to="/mydreamstream" className="white-text">
+                                    Welcome Back! Go to My DreamStream
+                                </NavLink>
+                            </button>
+                        )
+                    }
+                    {
+                        !isAuthenticated() && (
+                            <button className="waves-effect waves-light center btn btn-large light-blue white-text loggedout-btn" onClick={this.login.bind(this)}>
+                                Log In or Create Your DreamStream Profile
+                            </button>
+                        )
+                    }
                 </div>
             </div>
         )

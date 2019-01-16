@@ -37,7 +37,7 @@ class Contact extends Component {
                             </div>
                         </div>
                         <div className="row">
-                            <button className="btn btn-primary light-blue">Submit</button>
+                            <button className="waves-effect waves-light btn btn-primary light-blue">Submit</button>
                         </div>
                     </form>
                 </div>
