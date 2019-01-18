@@ -32,10 +32,14 @@ class App extends Component {
           <div className="container">
             <div className="brand-logo"><NavLink to="/"><img src="../images/dreamstream2color27.png" alt="dslogo" /></NavLink></div>
             <ul className="right">
-              <li><NavLink to="/" activeClassName="is-active" className="waves-effect waves-light">Home</NavLink></li>
-              <li><NavLink to="/search" activeClassName="is-active" className="waves-effect waves-light">Search</NavLink></li>
-              <li><NavLink to="/mydreamstream" activeClassName="is-active" className="waves-effect waves-light">My DreamStream</NavLink></li>
-              <li><NavLink to="/contact" activeClassName="is-active" className="waves-effect waves-light">Contact</NavLink></li>
+              <li><NavLink to="/" className="waves-effect waves-light">Home</NavLink></li>
+              <li><NavLink to="/search" className="waves-effect waves-light">Search</NavLink></li>
+              {
+                isAuthenticated() && (
+                  <li><NavLink to="/profile" className="waves-effect waves-light">Profile</NavLink></li>
+                )
+              }
+              <li><NavLink to="/contact" className="waves-effect waves-light">Contact</NavLink></li>
               {
                 !isAuthenticated() && (
                   <li className="login">

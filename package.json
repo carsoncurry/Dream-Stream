@@ -1,0 +1,37 @@
+{
+  "name": "dream-stream",
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "server.js",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.16.3",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.3.16"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'dreamstream/*'\" \"npm run dreamstream\"",
+    "client": "cd dreamstream && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd dreamstream && npm install",
+    "build": "cd dreamstream && npm run build",
+    "heroku-postbuild": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carsoncurry/Dream-Stream.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carsoncurry/Dream-Stream/issues"
+  },
+  "homepage": "https://github.com/carsoncurry/Dream-Stream#readme"
+}
