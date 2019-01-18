@@ -1,0 +1,9 @@
+p {
+    align-content: left;
+}
+
+#profile-pic {
+    border-radius: 50%;
+    width: 150px;
+    height: auto;
+}

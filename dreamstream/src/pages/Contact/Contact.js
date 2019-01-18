@@ -21,6 +21,8 @@ class Contact extends Component {
                             <div className="input-field">
                                 <input placeholder="First Name" id="first_name" type="text" className="validate white-text"/>
                             </div>
+                        </div>
+                        <div className="row">
                             <div className="input-field">
                                 <input placeholder="Last Name" id="last_name" type="text" className="validate white-text"/>
                             </div>
