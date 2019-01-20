@@ -2,18 +2,22 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const searchSchema = new Schema({
-    title: { type: String, required: true },
-    type: { type: String, required: true },
-    status: Boolean,
-    firstAired: Date,
-    channel: { type: String, required: true },
-    runtime: Number,
-    airDay: String,
-    airTime: TimeRanges,
-    rating: String,
+    name: { type: String, required: true },
+    type: String,
+    language: String,
     genres: [...String],
-    tags: [...String],
-    overview: String
+    officialSite: String,
+    network: {
+        name: String, required: true
+    },
+    webChannel: {
+        name: String, required: true
+    },
+    image: {
+        // might need a mongoose-validator
+        medium: String
+    },
+    summary: String
 });
 
 const Search = mongoose.model("Search", searchSchema);
