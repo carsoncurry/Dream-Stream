@@ -30,6 +30,10 @@ class Profile extends Component {
                     add or remove streaming services to which you are currently subscribed
                     and search for new series or movies!
                 </Row>
+                <Row>
+                    <h4 className="light-blue-text">My Streaming Services</h4>
+                    <p className="white-text">This is where all of your currently subscribed-to streaming services can be found:</p>
+                </Row>
             </div>
         )
     }

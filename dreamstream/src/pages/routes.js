@@ -2,7 +2,6 @@ import React from 'react';
 import { Route, Router } from 'react-router-dom';
 import App from '../App';
 import Home from './Home/Home';
-import Contact from './Contact/Contact';
 import Search from './Search/Search';
 import Profile from './Profile/Profile';
 import Callback from '../utils/Callback/Callback';
@@ -25,7 +24,6 @@ export const makeMainRoutes = () => {
                 <Route exact path="/" render={(props) => <Home auth={auth} {...props} />} />
                 <Route path="/search" render={(props) => <Search auth={auth} {...props} />} />
                 <Route path="/profile" render={(props) => <Profile auth={auth} {...props} />} />
-                <Route path="/contact" render={(props) => <Contact auth={auth} {...props} />} />
                 <Route path="/callback" render={(props) => {
                     handleAuthentication(props);
                     return <Callback {...props} />
