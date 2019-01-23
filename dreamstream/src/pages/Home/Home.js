@@ -19,11 +19,11 @@ import { Parallax, Row, Footer } from 'react-materialize';
             <div id="parent">
                 
                     <div className="section no-pad-bot">
-                            <div className="container">
+                            <div className="container center ">
 
-                                <h3 className="header center white-text text-lighten-2">Welcome To</h3>
+                                <h4 className="header center white-text text-lighten-2">Welcome To</h4>
 
-                                <img className="center" src="./images/dreamstream2color70.png" alt="dslogo" />
+                                <img className="center" src="./images/dreamstreamglow.png" alt="dslogo" />
                                 <Row className="center">
                                     <h5 className="header col s12 white-text">Your one stop source to finding your favortite show or movie!</h5>
                                 </Row>
