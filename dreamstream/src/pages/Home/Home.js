@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Parallax, Row, Footer } from 'react-materialize';
+
 // import { Button, Icon } from 'areact-materialize';
 
     class Home extends Component {
@@ -11,15 +12,13 @@ import { Parallax, Row, Footer } from 'react-materialize';
         const { isAuthenticated } = this.props.auth;
         return (
 
+
             
             
                 
             <div id="parent">
-                <Parallax imageSrc="./images/streaming2.jpg" 
                 
-                    greeting={
-
-                        <div className="section no-pad-bot">
+                    <div className="section no-pad-bot">
                             <div className="container">
 
                                 <h3 className="header center white-text text-lighten-2">Welcome To</h3>
@@ -51,8 +50,11 @@ import { Parallax, Row, Footer } from 'react-materialize';
                             </div>
                         </div>
 
+                        <Parallax imageSrc="./images/TV-Streaming.png"/> 
+                
+
                     }
-                    />
+                    
                                 
         
         
@@ -94,11 +96,7 @@ import { Parallax, Row, Footer } from 'react-materialize';
                                 </div>
                             {/* </div> */}
 
-                            <Parallax imageSrc="./images/streaming1.jpg" 
-                                greeting2={
-                                <h1 className="red-text"> Hello World</h1>
-                            }
-                            />
+                            <Parallax imageSrc="./images/streaming1.jpg"/>
 
 
 
@@ -147,3 +145,4 @@ import { Parallax, Row, Footer } from 'react-materialize';
         }
         
         export default Home;
+
