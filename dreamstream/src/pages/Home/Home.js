@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
-// import { NavLink } from 'react-router-dom';
 import { Parallax, Row, Footer } from 'react-materialize';
 import { Animated } from 'react-animated-css';
 import './Home.css';
 
 
 class Home extends Component {
-    login() {
-        this.props.auth.login();
-    }
     render() {
-        const { isAuthenticated } = this.props.auth;
         return (
             <div id="parent">
                 <div className="section no-pad-bot">
@@ -23,27 +18,6 @@ class Home extends Component {
                         </Row>
                         </div>
                     </Animated>
-                    {/* Login/Out Button Option */}
-                    {/* <div className="row center">
-                        <Row className="center">
-                            {
-                                isAuthenticated() && (
-                                <button className="waves-effect waves-light center btn btn-large light-blue white-text loggedin-btn">
-                                <NavLink to="/profile" className="white-text">
-                                    Welcome Back! Go to My DreamStream
-                                </NavLink>
-                                </button>
-                                )
-                            }
-                            {
-                                !isAuthenticated() && (
-                                <button className="waves-effect waves-light center btn btn-large light-blue white-text loggedout-btn" onClick={this.login.bind(this)}>
-                                    Log In or Create Your DreamStream Profile
-                                </button>
-                                )
-                            }
-                        </Row>
-                    </div> */}
                 </div>
 
                 <Parallax imageSrc="./images/TV-Streaming.png"/> 

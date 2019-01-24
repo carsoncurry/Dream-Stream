@@ -29,7 +29,6 @@ class Profile extends Component {
         const sum = (a, b) => a + b;
         const income = this.state.income;
         const expense = this.state.expense;
-        const service = this.state.service;
         const total = income.reduce(sum, 0) - expense.reduce(sum, 0);
         const { profile } = this.state;
         return (

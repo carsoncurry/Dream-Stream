@@ -1,5 +1,5 @@
 body {
-    background: darkslategray;
+    background: #212121;
 }
 
 .loggedin-btn, .loggedout-btn {
@@ -8,4 +8,9 @@ body {
 
 .logo {
     animation-duration: 5s;
+}
+
+img {
+    width: 100%;
+    left: 0;
 }
