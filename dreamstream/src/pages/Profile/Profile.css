@@ -1,9 +1,13 @@
-p {
-    align-content: left;
-}
-
 #profile-pic {
+    align-content: left;
+    position: relative;
+    display: block;
     border-radius: 50%;
     width: 150px;
     height: auto;
+}
+
+.calculate {
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
