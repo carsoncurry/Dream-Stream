@@ -15,7 +15,7 @@ import { Parallax, Row, Footer } from 'react-materialize';
             
                 
             <div id="parent">
-                <Parallax className="parallax-img" imageSrc="./images/streaming2.jpg" 
+                <Parallax imageSrc="./images/streaming2.jpg" 
                 
                     greeting={
 
@@ -59,7 +59,7 @@ import { Parallax, Row, Footer } from 'react-materialize';
                                         
                                 
                             {/* <div className="container grey darken-4"> */}
-                                <div className="container grey darken-4">
+                                <div className="grey darken-4">
 
                                     {/* Icon Section */}
                                     <div className="row center grey darken-4">

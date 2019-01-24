@@ -1,11 +1,3 @@
 .loggedin-btn, .loggedout-btn {
     color: white;
 }
-
-no-pad-bot {
-    z-index: 99;
-}
-
-.parallax-img {
-    z-index: 0;
-}
