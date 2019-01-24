@@ -29,7 +29,6 @@ class Profile extends Component {
         const sum = (a, b) => a + b;
         const income = this.state.income;
         const expense = this.state.expense;
-        const service = this.state.service;
         const total = income.reduce(sum, 0) - expense.reduce(sum, 0);
         const { profile } = this.state;
         return (
@@ -46,7 +45,7 @@ class Profile extends Component {
 
                     <Modal
                       header="My Monthly Subscription Costs"
-                      className="modal"
+                      className="grey lighten-4"
                       fixedFooter
                       trigger={<Button btn-large className="waves-effect waves-light light-blue white-text"><i className="material-icons medium">attach_money</i>My Monthly Budget</Button>}>
                         <div className="input-field col l4">
