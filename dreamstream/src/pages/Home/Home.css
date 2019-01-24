@@ -1,11 +1,9 @@
-body {
-    background: darkslategray;
-}
 
-.loggedin-btn, .loggedout-btn {
-    color: white;
+body {
+    background: #212121;
 }
 
 .logo {
     animation-duration: 5s;
 }
+

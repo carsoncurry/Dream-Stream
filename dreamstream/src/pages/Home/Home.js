@@ -46,7 +46,7 @@ class Home extends Component {
                     </div> */}
                 </div>
 
-                <Parallax imageSrc="./images/TV-Streaming.png"/> 
+                <Parallax imageSrc="./images/streaming1.jpg"/> 
 
                 <div className="grey darken-4">
 
@@ -70,10 +70,15 @@ class Home extends Component {
                             </div>
                         </div>
 
+
+                        <Parallax imageSrc="./images/TV-Streaming.png"/> 
+                
+
                         <div className="col s12 m4">
                             <div className="icon-block">
                                 <h2 className="center white-text"><i className="material-icons medium">monetization_on</i></h2>
                                 <h5 className="center white-text">Start a Budget</h5>
+
 
                                 <p className="center light-blue-text">With our budget tool, you can keep track of your subcriptions and how much you are spending per month.</p>
                             </div>
@@ -96,6 +101,8 @@ class Home extends Component {
                             </div>
                         </div>
                     }
+
+
                 >
                     <h5 className="white-text">About Us</h5>
                     <p className="grey-text text-lighten-4">We are a team of 3 from KU coding bootcamp. This is our final project. We hope DreamStream can become reality!</p>
@@ -104,5 +111,6 @@ class Home extends Component {
         )
     }
 }
+
         
 export default Home;
