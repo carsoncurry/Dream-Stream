@@ -50,7 +50,7 @@ import { Parallax, Row, Footer } from 'react-materialize';
                             </div>
                         </div>
 
-                        <Parallax imageSrc="./images/TV-Streaming.png"/> 
+                        <Parallax imageSrc="./images/streaming1.jpg"/> 
                 
 
                     }
@@ -96,7 +96,7 @@ import { Parallax, Row, Footer } from 'react-materialize';
                                 </div>
                             {/* </div> */}
 
-                            <Parallax imageSrc="./images/streaming1.jpg"/>
+                            <Parallax imageSrc="./images/TV-Streaming.png"/>
 
 
 
