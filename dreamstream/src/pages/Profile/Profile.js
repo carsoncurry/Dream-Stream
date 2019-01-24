@@ -45,7 +45,7 @@ class Profile extends Component {
 
                     <Modal
                       header="My Monthly Subscription Costs"
-                      className="modal"
+                      className="grey lighten-4"
                       fixedFooter
                       trigger={<Button btn-large className="waves-effect waves-light light-blue white-text"><i className="material-icons medium">attach_money</i>My Monthly Budget</Button>}>
                         <div className="input-field col l4">

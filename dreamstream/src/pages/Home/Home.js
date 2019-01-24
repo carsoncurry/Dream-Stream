@@ -43,9 +43,6 @@ class Home extends Component {
                                 <p className="center light-blue-text">By making a totally free account, you can input favorite genres and current streaming services to maximize your viewing sources.</p>
                             </div>
                         </div>
-
-
-                        <Parallax imageSrc="./images/TV-Streaming.png"/> 
                 
 
                         <div className="col s12 m4">
@@ -60,7 +57,7 @@ class Home extends Component {
                     </div>
                 </div>
 
-                <Parallax id="parallax-img" imageSrc="./images/streaming1.jpg"/>
+                <Parallax id="parallax-img" imageSrc="./images/TV-Streaming.png"/>
 
                 <Footer className="light-blue darken-2" copyrights="Made by FrontRow"
                     links={
