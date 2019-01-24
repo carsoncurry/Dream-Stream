@@ -4,6 +4,7 @@ import App from '../App';
 import Home from './Home/Home';
 import Search from './Search/Search';
 import Profile from './Profile/Profile';
+import NoProfile from './Profile/NoProfile';
 import Callback from '../utils/Callback/Callback';
 import Auth from '../utils/Auth/Auth';
 import history from '../utils/history';
@@ -24,6 +25,7 @@ export const makeMainRoutes = () => {
                 <Route exact path="/" render={(props) => <Home auth={auth} {...props} />} />
                 <Route path="/search" render={(props) => <Search auth={auth} {...props} />} />
                 <Route path="/profile" render={(props) => <Profile auth={auth} {...props} />} />
+                <Route path="/noprofile" render={(props) => <NoProfile auth={auth} {...props} />} />
                 <Route path="/callback" render={(props) => {
                     handleAuthentication(props);
                     return <Callback {...props} />
