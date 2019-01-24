@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import loading from './loading.svg';
+import { Row, Preloader } from 'react-materialize';
 
 class Callback extends Component {
     render() {
@@ -7,8 +7,8 @@ class Callback extends Component {
             position: 'absolute',
             display: 'flex',
             justifyContent: 'center',
-            height: '100vh',
-            width: '100vh',
+            height: '100%',
+            width: '100%',
             top: 0,
             bottom: 0,
             left: 0,
@@ -17,9 +17,9 @@ class Callback extends Component {
         }
         
         return (
-            <div style={style}>
-                <img src={loading} alt="loading"/>
-            </div>
+            <Row style={style}>
+                <Preloader size='big'/>
+            </Row>
         );
     }
 }

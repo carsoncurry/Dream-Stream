@@ -4,6 +4,16 @@ const router = require("express").Router();
 
 // API Routes
 // router.use("/api", apiRoutes);
+app.use("/api", apiRoutes);
+
+app.get('/authorized', function (req, res) {
+  res.send('Secured Resource');
+});
+
+router.get('/user', checkJwt, (req, res) => {
+  const user = req.user;
+  console.log(user);
+});
 
 // If no API routes are hit, send the React app
 router.use(function(req, res) {
@@ -11,8 +21,3 @@ router.use(function(req, res) {
 });
 
 module.exports = router;
-
-
-
-
-
