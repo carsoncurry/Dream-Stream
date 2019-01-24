@@ -39,7 +39,6 @@ class App extends Component {
                   <li><NavLink to="/profile" className="waves-effect waves-light">Profile</NavLink></li>
                 )
               }
-              <li><NavLink to="/contact" className="waves-effect waves-light">Contact</NavLink></li>
               {
                 !isAuthenticated() && (
                   <li className="login">
