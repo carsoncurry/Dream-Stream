@@ -1,16 +1,22 @@
+<<<<<<< HEAD
 body {
     background: #212121;
 }
+=======
+>>>>>>> master
 
-.loggedin-btn, .loggedout-btn {
-    color: white;
+body {
+    background: #212121;
 }
 
 .logo {
     animation-duration: 5s;
 }
 
+<<<<<<< HEAD
 img {
     width: 100%;
     left: 0;
 }
+=======
+>>>>>>> master
