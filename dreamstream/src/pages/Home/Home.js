@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import { Parallax, Row, Footer } from 'react-materialize';
+import { Animated } from 'react-animated-css';
+import './Home.css';
 
 
 class Home extends Component {
@@ -12,18 +14,22 @@ class Home extends Component {
         return (
             <div id="parent">
                 <div className="section no-pad-bot">
-                    <div className="container center ">
-                    <h4 className="header center white-text text-lighten-2">Welcome To</h4>
-                    <img className="center" src="./images/dreamstreamglow.png" alt="dslogo" />
-                    <Row className="center">
-                        <h5 className="header col s12 white-text">Your one stop source to finding your favortite show or movie!</h5>
-                    </Row>
-                    <div className="row center">
+                    <Animated className="logo" animationIn="fadeIn" animationOut="fadeOut" isVisible={true}>
+                        <div className="container center ">
+                        <h4 className="header center white-text text-lighten-2">welcome to</h4>
+                        <img className="center" src="./images/dreamstreamglow.png" alt="dslogo" />
+                        <Row className="center">
+                            <h5 className="header col s12 white-text">your personal streaming content platform</h5>
+                        </Row>
+                        </div>
+                    </Animated>
+                    {/* Login/Out Button Option */}
+                    {/* <div className="row center">
                         <Row className="center">
                             {
                                 isAuthenticated() && (
                                 <button className="waves-effect waves-light center btn btn-large light-blue white-text loggedin-btn">
-                                <NavLink to="/mydreamstream" className="white-text">
+                                <NavLink to="/profile" className="white-text">
                                     Welcome Back! Go to My DreamStream
                                 </NavLink>
                                 </button>
@@ -37,7 +43,7 @@ class Home extends Component {
                                 )
                             }
                         </Row>
-                    </div>
+                    </div> */}
                 </div>
 
                 <Parallax imageSrc="./images/TV-Streaming.png"/> 
@@ -48,10 +54,10 @@ class Home extends Component {
                     <div className="row center grey darken-4">
                         <div className="col s12 m4 grey darken-4">
                             <div className="icon-block">
-                                <h2 className="center white-text"><i className="material-icons medium">favorite</i></h2>
+                                <h2 className="center white-text"><i className="material-icons medium">search</i></h2>
                                 <h5 className="center white-text">Simplify Searching</h5>
 
-                                <p className="center light-blue-text">Finding one source to your favorite shows & movies stops here. You can find free sources, as well as subscription sources from the services you know.  </p>
+                                <p className="center light-blue-text">Finding a streaming service that has your favorite show or movie has never been easier. </p>
                             </div>
                         </div>
 
@@ -69,13 +75,13 @@ class Home extends Component {
                                 <h2 className="center white-text"><i className="material-icons medium">monetization_on</i></h2>
                                 <h5 className="center white-text">Start a Budget</h5>
 
-                                <p className="center light-blue-text">With our budget tool, you can keep track of your subcriptions and how much your spending per month.</p>
+                                <p className="center light-blue-text">With our budget tool, you can keep track of your subcriptions and how much you are spending per month.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <Parallax imageSrc="./images/streaming1.jpg"/>
+                <Parallax id="parallax-img" imageSrc="./images/streaming1.jpg"/>
 
                 <Footer className="light-blue darken-2" copyrights="Made by FrontRow"
                     links={
@@ -95,7 +101,6 @@ class Home extends Component {
                     <p className="grey-text text-lighten-4">We are a team of 3 from KU coding bootcamp. This is our final project. We hope DreamStream can become reality!</p>
                 </Footer>
             </div>
-            </div>              
         )
     }
 }
