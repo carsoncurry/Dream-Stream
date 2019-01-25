@@ -1,7 +1,10 @@
+const path = require("path");
 const router = require("express").Router();
-// const bookRoutes = require("./books");
+const searchRoutes = require("./search");
+const tvmRoutes =require("./TVM");
 
-// // Book routes
-// router.use("/books", bookRoutes);
+
+router.use("/search", searchRoutes);
+router.use("/tvm", tvmRoutes);
 
 module.exports = router;
