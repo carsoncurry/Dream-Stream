@@ -1,22 +1,14 @@
 const router = require("express").Router();
 const searchController = require("../../controllers/searchController");
 
-router.route("/")
-    // .get(searchController.findAll)
-    // .post(searchController.save);
-
-router.route("/search")
-    .get(searchController.findbyId)
+router.route("/search/save")
+    .post(searchController.create);
 
 router.route("/profile")
-    // .get(searchController.findbyId)
-    // .delete(searchController.remove);
+    .get(searchController.findAll)
+    .delete(searchController.remove);
 
 router.route("/noprofile")
-    // .get(searchController.findbyId)
-    // .delete(searchController.remove);
-
-router.route("/callback")
     // .get(searchController.findbyId)
     // .delete(searchController.remove);
 

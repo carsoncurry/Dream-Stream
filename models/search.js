@@ -5,18 +5,12 @@ const searchSchema = new Schema({
     name: { type: String, required: true },
     type: String,
     language: String,
-    genres: [...String],
+    genres: [String],
     officialSite: String,
-    network: {
-        name: String, required: true
-    },
-    webChannel: {
-        name: String, required: true
-    },
-    image: {
+    network: String,
+    webChannel: String,
         // might need a mongoose-validator
-        medium: String
-    },
+    image: String,
     summary: String
 });
 
