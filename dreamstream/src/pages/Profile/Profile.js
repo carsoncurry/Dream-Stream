@@ -90,14 +90,29 @@ const Values = ({
     values
 }) => {
     return (
-        <ul>
+        <span>
             { values.map((value, i) =>
-                <li key={`value-${i}`}>
-                    { value } 
-                </li>
+                <p key={`value-${i}`}>
+                    { value }
+                </p>
             )}
-        </ul>
-    );
+        </span>
+    )
 }
+
+
+// const Values = ({
+//     values
+// }) => {
+//     return (
+//         <ul>
+//             { values.map((value, i) =>
+//                 <li key={`value-${i}`}>
+//                     { value } 
+//                 </li>
+//             )}
+//         </ul>
+//     );
+// }
 
 export default Profile;
