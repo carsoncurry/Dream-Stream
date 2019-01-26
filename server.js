@@ -2,6 +2,7 @@ const express = require("express");
 
 const mongoose = require("mongoose");
 const routes = require("./routes");
+const router = require("../Dream-Stream/dreamstream/src/pages/routes/apis/index");
 const app = express();
 const PORT = process.env.PORT || 8000;
 

@@ -15,3 +15,8 @@
 .li:hover {
     background: transparent;
 }
+
+.budget-btn {
+    display: inline-flex;
+    vertical-align: middle;
+}
