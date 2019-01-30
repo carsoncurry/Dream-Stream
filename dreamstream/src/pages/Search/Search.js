@@ -19,11 +19,13 @@ class Search extends Component {
     };
 
     saveSearch = name => {
-        const search = this.state.search.find(search => search.name === name);
+        const search = this.state.search[0];
 
-        if(search){
+        if(!search){
+            console.log("nothing to search")
+        }
 
-        API.saveSearch({
+        const saveBody = {
             name: search.name,
             type: search.type,
             language: search.language,
@@ -33,9 +35,19 @@ class Search extends Component {
             webChannel: search.webChannel.name,
             image: search.image.original,
             summary: search.summary
-        })
-        console.log("saved")
-    }
+        };
+
+        console.log(saveBody);
+
+        API.saveSearch(saveBody)
+        .then(data => console.log(data, "search has been saved"))
+        .catch((error) => {
+            console.log(error)
+            this.setState({
+                message: "Search not saved"
+            })
+        }
+        )
     };
 
 
@@ -54,7 +66,7 @@ class Search extends Component {
                 message: "Search not found"
             })
         );
-            this.saveSearch(this.state.search);
+            // this.saveSearch(this.state.search);
     };
 
 
@@ -70,7 +82,7 @@ class Search extends Component {
 
     render() {
         return (
-
+ 
             <div className="container home">
                 <Card className='medium black center'
                     header={<CardTitle image='https://i.gifer.com/DMV.gif'>
@@ -89,8 +101,8 @@ class Search extends Component {
                         onClick={this.handleSearchSubmit}>Submit</button>
                     </form>
                 </Card>
-
-
+ 
+ 
                 <div className="row">
                 <Card className="grey lighten-2">
                     <h4>Search Results</h4>
@@ -113,14 +125,14 @@ class Search extends Component {
                             </Row>
                         </div>
                         )}
-
+ 
                 </Card>
-
+ 
                 </div>
                 <div className="row">
-
+ 
                 </div>
-
+ 
                 <div className="result container">
                     <div className="grey darken-4">
                     </div>
@@ -128,6 +140,6 @@ class Search extends Component {
             </div>
         )
     }
-}
+};
 
 export default Search;
