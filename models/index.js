@@ -1,3 +1,3 @@
 module.exports = {
-    Search: require("./search")
+    Search: require("./Search")
 };

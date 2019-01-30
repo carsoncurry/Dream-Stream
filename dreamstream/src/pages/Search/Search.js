@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardTitle } from 'react-materialize';
+import { Card, CardTitle, Row } from 'react-materialize';
 import API from "../../utils/API"
 import SearchBox from "../../components/SearchBox"
 
@@ -19,11 +19,13 @@ class Search extends Component {
     };
 
     saveSearch = name => {
-        const search = this.state.search.find(search => search.name === name);
+        const search = this.state.search[0];
 
-        if(search){
+        if(!search){
+            console.log("nothing to search")
+        }
 
-        API.saveSearch({
+        const saveBody = {
             name: search.name,
             type: search.type,
             language: search.language,
@@ -33,9 +35,19 @@ class Search extends Component {
             webChannel: search.webChannel.name,
             image: search.image.original,
             summary: search.summary
-        })
-        console.log("saved")
-    }
+        };
+
+        console.log(saveBody);
+
+        API.saveSearch(saveBody)
+        .then(data => console.log(data, "search has been saved"))
+        .catch((error) => {
+            console.log(error)
+            this.setState({
+                message: "Search not saved"
+            })
+        }
+        )
     };
 
 
@@ -54,7 +66,7 @@ class Search extends Component {
                 message: "Search not found"
             })
         );
-            this.saveSearch(this.state.search);
+            // this.saveSearch(this.state.search);
     };
 
 
@@ -70,14 +82,16 @@ class Search extends Component {
 
     render() {
         return (
-
+ 
             <div className="container home">
                 <Card className='medium black center'
-                    header={<CardTitle image='https://i.gifer.com/DMV.gif'><h4 className="white-text center">Search the Streams</h4></CardTitle>}
-                >
+                    header={<CardTitle image='https://i.gifer.com/DMV.gif'>
+                    <h4 className="white-text center">Search the Streams</h4>
+                    </CardTitle>}>
+ 
                     <form className="white-text">
-                        <input placeholder="Search by Series, Movie, Channel, Genre or Streaming Service" 
-                        className="white-text" 
+                        <input placeholder="Search for a Series"
+                        className="white-text"
                         type="text"
                         value={this.state.query}
                         name="query"
@@ -86,43 +100,46 @@ class Search extends Component {
                         <button className="waves-effect waves-light btn btn-primary light-blue"
                         onClick={this.handleSearchSubmit}>Submit</button>
                     </form>
-                    <SearchBox
-                        handleSearchSubmit={this.handleSearchSubmit}
-                        query={this.state.query}
-                    />
                 </Card>
-
-
+ 
+ 
                 <div className="row">
-                <Card title="search-results">
-
-                    {this.state.search.map(search => 
+                <Card className="grey lighten-2">
+                    <h4>Search Results</h4>
+                    {this.state.search.map(search =>
                         <div key={search.id} >
-                        <div>{search.name}</div>
-                        <div>{search.type}</div>
-                        <div>{search.officialSite}</div>
-                        {/* <div>{search.genre}</div> */}
-                        {/* <div>{search.image}</div> */}
-                        <div>{search.summary}</div>
+                            <Row>
+                                <h3 id="show-name">{search.name}</h3>
+                            </Row>
+                            <Row className="show-info">
+                                <img className="col l3" id="show-image" src={search.image.original} alt="official"/>
+                                <div className="col l7 offset-l1">
+                                    {/* <h5 id="show-source">Streaming Channel: {search.webChannel.name}</h5> */}
+                                    {/* <h6 id="show-network">Original Network: {search.network.name}</h6> */}
+                                    <h6 id="show-type">Show Type: {search.type}</h6>
+                                    <h6 id="show-website">Official Website: {search.officialSite}</h6>
+                                    <h6 id="show-genre">Genre(s): {search.genres}</h6>
+                                    <div id="show-summary">Summary: {search.summary}</div>
+                                    <button className="waves-effect waves-light btn btn-small light-blue" onClick={this.saveSearch}>Save This Show</button>
+                                </div>
+                            </Row>
                         </div>
                         )}
-
+ 
                 </Card>
-
+ 
                 </div>
                 <div className="row">
-
+ 
                 </div>
-
+ 
                 <div className="result container">
                     <div className="grey darken-4">
-
-
                     </div>
                 </div>
             </div>
         )
     }
-}
+};
 
 export default Search;

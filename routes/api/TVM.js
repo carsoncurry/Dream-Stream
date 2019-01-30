@@ -2,7 +2,7 @@ const router = require("express").Router();
 const tvmController = require("../../controllers/TVMcontroller");
 
 router
-  .route("/tvm")
+  .route("/")
   .get(tvmController.findByTitle);
 
 module.exports = router;
