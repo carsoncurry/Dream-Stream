@@ -19,3 +19,8 @@
 h6 {
     font-weight: bold;
 }
+
+.modal-button {
+    display: flex;
+    align-items: center;
+}

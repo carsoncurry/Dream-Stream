@@ -47,7 +47,7 @@ class Profile extends Component {
                       header="My Monthly Subscription Costs"
                       className="grey lighten-4"
                       fixedFooter
-                      trigger={<Button btn-large className="waves-effect waves-light light-blue white-text"><i className="material-icons medium">attach_money</i>My Monthly Budget</Button>}>
+                      trigger={<Button btn-large className="waves-effect waves-light light-blue white-text modal-button"><i className="material-icons medium">attach_money</i>My Monthly Budget</Button>}>
                         <div className="input-field col l4">
                             <input type="text" id="service-name" placeholder="Streaming Service (Netflix, Hulu, HBO Now, etc." ref="service" />
                         </div>
