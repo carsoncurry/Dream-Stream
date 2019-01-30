@@ -1,0 +1,16 @@
+#show-type, #show-website, #show-genre, #show-summary {
+    margin-top: 10px;
+    color: black;
+}
+
+#show-image {
+    width: 250px;
+}
+
+.show-info {
+    display: inline-block;
+}
+
+button {
+    margin-top: 10px;
+}

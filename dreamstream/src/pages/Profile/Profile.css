@@ -9,7 +9,7 @@
 
 .calculate {
     margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 50px;
 }
 
 .li:hover {
@@ -19,4 +19,14 @@
 .budget-btn {
     display: inline-flex;
     vertical-align: middle;
+}
+
+h4, h5 {
+    text-align: center;
+    font-weight: bold;
+}
+
+h6 {
+    text-align: right;
+    margin-top: 25px;
 }

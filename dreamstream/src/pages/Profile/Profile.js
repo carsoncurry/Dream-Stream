@@ -98,9 +98,11 @@ class Profile extends Component {
                         <Button type="button" className="waves-effect waves-light center btn btn-small light-blue white-text calculate" onClick={ this.addValue }>Add/Remove</Button>
                         
                         <div className="monthly-budget">
-                            <h6>My Streaming Services: <Values values={ this.state.income } /></h6>
-                            <h6>Canceled Services: <Values values={ this.state.expense } /></h6>
-                            <h6>Monthly Streaming Expenses: ${ total }</h6>
+                            {/* <h6>My Streaming Services: <Values values={ this.state.income } /></h6>
+                            <h6>Canceled Services: <Values values={ this.state.expense } /></h6> */}
+                            <h4>Monthly Streaming Expenses: ${ total }</h4>
+                            <h5>Average Monthly Cable Subscription: $72.60*</h5>
+                            <h6>*Based on national averages for tv only subscriptions <a href="https://www.cabletv.com/blog/how-much-should-i-pay-for-cable-tv/" target="__blank">LINK</a></h6>
                         </div>
                     </Modal>
 
@@ -120,18 +122,33 @@ class Profile extends Component {
     }
 }
 
-const Values = ({
-    values
-}) => {
-    return (
-        <ul>
-            { values.map((value, i) =>
-                <li key={`value-${i}`}>
-                    { value } 
-                </li>
-            )}
-        </ul>
-    );
-}
+// const Values = ({
+//     values
+// }) => {
+//     return (
+//         <span>
+//             { values.map((value, i) =>
+//                 <p key={`value-${i}`}>
+//                     { value }
+//                 </p>
+//             )}
+//         </span>
+//     )
+// }
+
+
+// const Values = ({
+//     values
+// }) => {
+//     return (
+//         <ul>
+//             { values.map((value, i) =>
+//                 <li key={`value-${i}`}>
+//                     { value } 
+//                 </li>
+//             )}
+//         </ul>
+//     );
+// }
 
 export default Profile;
