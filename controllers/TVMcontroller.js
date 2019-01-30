@@ -4,12 +4,13 @@ const db = require("../models");
 module.exports = {
     findByTitle: function(req, res) {
         const { query: params } = req;
+        console.log("controller")
         axios
-            .get("http://api.tvmaze.com/singlesearch/shows?q=", {
+            .get("https://api.tvmaze.com/singlesearch/shows", {
                 params
             })
-            .then(res =>
-                res.data.items.filter(
+            .then(results =>
+                results.data.filter(
                     result =>
                     result.name &&
                     result.type &&
@@ -22,8 +23,12 @@ module.exports = {
                     result.summary
                 )
             )
-            .then(
-                console.log(res)
+            .then(tvmapi =>
+                db.Search.find().then(dbSearch =>
+                    tvmapi.filter(apisearch =>
+                        dbSearch.every(apisearch.id.toString() !== dbSearch.id)
+                    )
+                )
             )
             .then(search => res.json(search))
             .catch(err => res.status(422).json(err));
