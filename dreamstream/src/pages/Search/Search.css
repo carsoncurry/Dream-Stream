@@ -1,6 +1,7 @@
-#show-type, #show-website, #show-genre, #show-summary {
+#show-type, #show-network, #show-website, #show-genre, #show-summary, #show-status {
     margin-top: 10px;
     color: black;
+    text-align: left;
 }
 
 #show-image {
