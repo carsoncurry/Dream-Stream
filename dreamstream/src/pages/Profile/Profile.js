@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Modal, Button } from 'react-materialize';
+import { Row, Modal, Button, Autocomplete } from 'react-materialize';
 import './Profile.css';
 
 class Profile extends Component {
@@ -37,7 +37,7 @@ class Profile extends Component {
                     <Row>
                         <h5 className="light-blue-text">{profile.nickname}'s DreamStream</h5>
                     </Row>
-                    <Row className="white-text">
+                    <Row className="white-text flow-text">
                         <img id="profile-pic" src={profile.picture} alt="profile" />
                         Hi, {profile.nickname}! Welcome to your personal DreamStream page. 
                         This is where you can add or remove streaming services to your monthly budget. 
@@ -47,9 +47,43 @@ class Profile extends Component {
                       header="My Monthly Subscription Costs"
                       className="grey lighten-4"
                       fixedFooter
-                      trigger={<Button btn-large className="waves-effect waves-light light-blue white-text"><i className="material-icons medium">attach_money</i>My Monthly Budget</Button>}>
-                        <div className="input-field col l4">
-                            <input type="text" id="service-name" placeholder="Streaming Service (Netflix, Hulu, HBO Now, etc." ref="service" />
+                      trigger={<Button className="budget-btn btn-large waves-effect waves-light light-blue white-text"><i className="material-icons medium">attach_money</i>My Monthly Budget</Button>}>
+                        <div className="col l4">
+                            <Autocomplete
+                                title='Streaming Services'
+                                data={
+                                    {
+                                        'Amazon Prime': null,
+                                        'CBS All-Access': null,
+                                        'Crunchyroll Premium': null,
+                                        'Fandor': null,
+                                        'FilmStruck': null,
+                                        'FlixFling': null,
+                                        'Gaiam TV': null,
+                                        'Hallmark Movies Now': null,
+                                        'HBO Now': null,
+                                        'Hulu': null,
+                                        'Hulu with Showtime': null,
+                                        'IndieFlix': null,
+                                        'MUBI': null,
+                                        'National Geographic Kids': null,
+                                        'Netflix': null,
+                                        'NBA League Pass': null,
+                                        'Seeso': null,
+                                        'Sesame Street Go': null,
+                                        'Showtime': null,
+                                        'Shudder': null,
+                                        'STARZ': null,
+                                        'SundanceNow Doc Club': null,
+                                        'Tribeca Shortlist': null,
+                                        'Warner Archive Instant': null,
+                                        'WWE Network': null,
+                                    }
+                                }
+                                onAutocomplete= {(value)=>{
+                                    console.log(value);
+                                }}
+                            />
                         </div>
                         <div className="input-field col l4 offset-l2">
                             <input type="number" id="service-cost" placeholder="Monthly Subscription Cost" step="0.01" min="1.00" max="99.99" ref="value" />
@@ -61,12 +95,14 @@ class Profile extends Component {
                                 <option value="expense">Remove</option>
                             </select>    
                         </div>
-                        <Button type="button" className="waves-effect waves-light center btn btn-small light-blue white-text calculate" onClick={ this.addValue }>Calculate</Button>
+                        <Button type="button" className="waves-effect waves-light center btn btn-small light-blue white-text calculate" onClick={ this.addValue }>Add/Remove</Button>
                         
                         <div className="monthly-budget">
-                            <h6>My Streaming Services: <Values values={ this.state.income } /></h6>
-                            <h6>Canceled Services: <Values values={ this.state.expense } /></h6>
-                            <h6>Monthly Streaming Expenses: ${ total }</h6>
+                            {/* <h6>My Streaming Services: <Values values={ this.state.income } /></h6>
+                            <h6>Canceled Services: <Values values={ this.state.expense } /></h6> */}
+                            <h4>Monthly Streaming Expenses: ${ total }</h4>
+                            <h5>Average Monthly Cable Subscription: $72.60*</h5>
+                            <h6>*Based on national averages for tv only subscriptions <a href="https://www.cabletv.com/blog/how-much-should-i-pay-for-cable-tv/" target="__blank">LINK</a></h6>
                         </div>
                     </Modal>
 
@@ -86,18 +122,33 @@ class Profile extends Component {
     }
 }
 
-const Values = ({
-    values
-}) => {
-    return (
-        <ul>
-            { values.map((value, i) =>
-                <li key={`value-${i}`}>
-                    { value } 
-                </li>
-            )}
-        </ul>
-    );
-}
+// const Values = ({
+//     values
+// }) => {
+//     return (
+//         <span>
+//             { values.map((value, i) =>
+//                 <p key={`value-${i}`}>
+//                     { value }
+//                 </p>
+//             )}
+//         </span>
+//     )
+// }
+
+
+// const Values = ({
+//     values
+// }) => {
+//     return (
+//         <ul>
+//             { values.map((value, i) =>
+//                 <li key={`value-${i}`}>
+//                     { value } 
+//                 </li>
+//             )}
+//         </ul>
+//     );
+// }
 
 export default Profile;

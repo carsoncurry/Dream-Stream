@@ -5,3 +5,7 @@ body {
 .logo {
     animation-duration: 5s;
 }
+
+.contactButton {
+    vertical-align: middle;
+}

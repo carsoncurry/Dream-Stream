@@ -3,7 +3,6 @@ import { Parallax, Row, Footer } from 'react-materialize';
 import { Animated } from 'react-animated-css';
 import './Home.css';
 
-
 class Home extends Component {
     render() {
         return (
@@ -65,15 +64,13 @@ class Home extends Component {
                             <div className="right">
                                 <h5 className="right white-text">Developers</h5>
                                 <ul>
-                                    <li> <a className="white-text text-lighten-4" href="#!"><i className="material-icons tiny">email</i>John Caldwell</a></li>
-                                    <li> <a className="white-text text-lighten-4" href="#!"><i className="material-icons tiny">email</i>Carson Curry</a></li>
-                                    <li> <a className="white-text text-lighten-4" href="#!"><i className="material-icons tiny">email</i>Melissa Murphey</a></li>
+                                    <li> <a className="white-text text-lighten-4" href="#!">John Caldwell</a></li>
+                                    <li> <a className="white-text text-lighten-4" href="#!">Carson Curry</a></li>
+                                    <li> <a className="white-text text-lighten-4" href="#!">Melissa Murphey</a></li>
                                 </ul>
                             </div>
                         </div>
                     }
-
-
                 >
                     <h5 className="white-text">About Us</h5>
                     <p className="grey-text text-lighten-4">We are a team of 3 from KU coding bootcamp. This is our final project. We hope DreamStream can become reality!</p>
@@ -83,5 +80,4 @@ class Home extends Component {
     }
 }
 
-        
 export default Home;

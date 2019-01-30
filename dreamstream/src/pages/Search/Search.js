@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Card, CardTitle, Row } from 'react-materialize';
 import API from "../../utils/API"
-import SearchBox from "../../components/SearchBox"
+import './Search.css';
 
 class Search extends Component {
     state = {
@@ -88,10 +88,10 @@ class Search extends Component {
                     header={<CardTitle image='https://i.gifer.com/DMV.gif'>
                     <h4 className="white-text center">Search the Streams</h4>
                     </CardTitle>}>
- 
+
                     <form className="white-text">
-                        <input placeholder="Search for a Series"
-                        className="white-text"
+                        <input placeholder="Search for a Series" 
+                        className="white-text" 
                         type="text"
                         value={this.state.query}
                         name="query"
@@ -111,16 +111,16 @@ class Search extends Component {
                             <Row>
                                 <h3 id="show-name">{search.name}</h3>
                             </Row>
-                            <Row className="show-info">
+                            <Row class="show-info">
                                 <img className="col l3" id="show-image" src={search.image.original} alt="official"/>
                                 <div className="col l7 offset-l1">
-                                    {/* <h5 id="show-source">Streaming Channel: {search.webChannel.name}</h5> */}
-                                    {/* <h6 id="show-network">Original Network: {search.network.name}</h6> */}
-                                    <h6 id="show-type">Show Type: {search.type}</h6>
+                                    {/* {/* <h5 id="show-source">Streaming Channel: {search.webChannel.name}</h5> */}
+                                    <h6 id="show-network">Original Network: {search.network.name}</h6>
                                     <h6 id="show-website">Official Website: {search.officialSite}</h6>
-                                    <h6 id="show-genre">Genre(s): {search.genres}</h6>
+                                    <h6 id="show-status">Is It Running? {search.status}</h6>
+                                    <h6 id="show-genre">Genre(s): {search.genres.join(" / ")}</h6>
                                     <div id="show-summary">Summary: {search.summary}</div>
-                                    <button className="waves-effect waves-light btn btn-small light-blue" onClick={this.saveSearch}>Save This Show</button>
+                                    <button className="waves-effect waves-light btn btn-small light-blue">Save This Show</button>
                                 </div>
                             </Row>
                         </div>

@@ -1,5 +1,6 @@
 const path = require("path");
 const router = require("express").Router();
+const checkJwt = require("./apis/index");
 // const apiRoutes = require("./api");
 
 // API Routes

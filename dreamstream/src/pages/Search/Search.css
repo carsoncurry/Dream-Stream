@@ -1,0 +1,17 @@
+#show-type, #show-network, #show-website, #show-genre, #show-summary, #show-status {
+    margin-top: 10px;
+    color: black;
+    text-align: left;
+}
+
+#show-image {
+    width: 250px;
+}
+
+.show-info {
+    display: inline-block;
+}
+
+button {
+    margin-top: 10px;
+}
