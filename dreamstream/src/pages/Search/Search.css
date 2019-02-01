@@ -4,6 +4,10 @@
     text-align: left;
 }
 
+#show-source {
+    text-align: left;
+}
+
 #show-image {
     width: 250px;
 }
