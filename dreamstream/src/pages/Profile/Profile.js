@@ -3,6 +3,7 @@ import { Row, Modal, Button, Autocomplete, Col, Card } from 'react-materialize';
 import SavedBox from "../../components/SavedBox";
 import API from '../../utils/API';
 import './Profile.css';
+import API from "../../utils/API"
 
 class Profile extends Component {
     constructor(props) {

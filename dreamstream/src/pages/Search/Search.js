@@ -21,7 +21,7 @@ class Search extends Component {
     saveSearch = name => {
         const search = this.state.search[0];
 
-        if(!search){
+        if (!search) {
             console.log("nothing to search")
         }
 
@@ -40,14 +40,14 @@ class Search extends Component {
         console.log(saveBody);
 
         API.saveSearch(saveBody)
-        .then(data => console.log(data, "search has been saved"))
-        .catch((error) => {
-            console.log(error)
-            this.setState({
-                message: "Search not saved"
-            })
-        }
-        )
+            .then(data => console.log(data, "search has been saved"))
+            .catch((error) => {
+                console.log(error)
+                this.setState({
+                    message: "Search not saved"
+                })
+            }
+            )
     };
 
 
@@ -57,16 +57,16 @@ class Search extends Component {
                 this.setState({
                     search: [res.data]
                 },
-                console.log(this.state.search),
-                console.log(res.data))
+                    console.log(this.state.search),
+                    console.log(res.data))
             )
             .catch(() =>
-            this.setState({
-                search: "",
-                message: "Search not found"
-            })
-        );
-            // this.saveSearch(this.state.search);
+                this.setState({
+                    search: "",
+                    message: "Search not found"
+                })
+            );
+        // this.saveSearch(this.state.search);
     };
 
 
@@ -80,30 +80,33 @@ class Search extends Component {
         console.log("submit")
     };
 
+
+
     render() {
         return (
- 
+
             <div className="container home">
                 <Card className='medium black center'
                     header={<CardTitle image='https://i.gifer.com/DMV.gif'>
-                    <h4 className="white-text center">Search the Streams</h4>
+                        <h4 className="white-text center">Search the Streams</h4>
                     </CardTitle>}>
 
                     <form className="white-text">
-                        <input placeholder="Search for a Series" 
-                        className="white-text" 
-                        type="text"
-                        value={this.state.query}
-                        name="query"
-                        onChange={this.handleInputChange}
-                        required />
+                        <input placeholder="Search for a Series"
+                            className="white-text"
+                            type="text"
+                            value={this.state.query}
+                            name="query"
+                            onChange={this.handleInputChange}
+                            required />
                         <button className="waves-effect waves-light btn btn-primary light-blue"
-                        onClick={this.handleSearchSubmit}>Submit</button>
+                            onClick={this.handleSearchSubmit}>Submit</button>
                     </form>
                 </Card>
- 
- 
+
+
                 <div className="row">
+<<<<<<< HEAD
                 <Card className="grey lighten-2">
                     <h4>Search Results</h4>
                     {this.state.search.map(search =>
@@ -124,15 +127,38 @@ class Search extends Component {
                                 </div>
                             </Row>
                         </div>
+=======
+                    <Card className="grey lighten-2">
+                        <h4>Search Results</h4>
+                        {this.state.search.map(search =>
+                            <div key={search.id} >
+                                <Row>
+                                    <h3 id="show-name">{search.name}</h3>
+                                </Row>
+                                <Row class="show-info">
+                                    <img className="col l3" id="show-image" src={search.image.original} alt="official" />
+                                    <div className="col l7 offset-l1">
+                                        <h5 id="show-source">Streaming Channel: {search.webChannel ? search.webChannel.name : "unavailable"}</h5>
+                                        <h6 id="show-network">Original Network: {search.network ? search.network.name : "unavailable"}</h6>
+                                        <h6 id="show-website">Official Website: {search.officialSite}</h6>
+                                        <h6 id="show-status">Is It Running? {search.status}</h6>
+                                        <h6 id="show-genre">Genre(s): {search.genres.join(" / ")}</h6>
+                                        {/* <div id="show-summary">Summary: {search.summary}</div> */}
+                                        <div dangerouslySetInnerHTML={{ __html: search.summary }} />
+                                        <button className="waves-effect waves-light btn btn-small light-blue">Save This Show</button>
+                                    </div>
+                                </Row>
+                            </div>
+>>>>>>> 47c6319a045fdfa1739025a888bd7055e3aaae54
                         )}
- 
-                </Card>
- 
+
+                    </Card>
+
                 </div>
                 <div className="row">
- 
+
                 </div>
- 
+
                 <div className="result container">
                     <div className="grey darken-4">
                     </div>
