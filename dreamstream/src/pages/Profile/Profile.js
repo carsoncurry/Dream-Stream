@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Row, Modal, Button, Autocomplete } from 'react-materialize';
+import { Row, Modal, Button, Autocomplete, Col } from 'react-materialize';
+import SavedBox from "../../components/SavedBox";
 import './Profile.css';
 
 class Profile extends Component {
@@ -8,7 +9,8 @@ class Profile extends Component {
 
         this.state = {
             income: [],
-            expense: []
+            expense: [],
+            searches: []
         };
 
         this.addValue = this.addValue.bind(this);
@@ -23,6 +25,20 @@ class Profile extends Component {
         } else {
             this.setState({ profile: userProfile });
         }
+    }
+
+    getSavedSearches = () => {
+        API.getSavedSearches()
+            .then(res =>
+                this.setState({
+                    searches: res.data
+                })
+            )
+            .catch(err => console.log(err));
+    };
+
+    deleteSearch = id => {
+        API.deleteSearch(id).then(res => this.getSavedSearches());
     }
 
     render() {
@@ -105,7 +121,36 @@ class Profile extends Component {
                             <h6>*Based on national averages for tv only subscriptions <a href="https://www.cabletv.com/blog/how-much-should-i-pay-for-cable-tv/" target="__blank">LINK</a></h6>
                         </div>
                     </Modal>
-
+                    <Row>
+                        <Col>
+                            <Card>
+                                {this.state.searches.length ? (
+                                    <div>
+                                        {this.state.searches.map(search => (
+                                            <SavedBox
+                                                name={search.name}
+                                                genres={search.genres.join(", ")}
+                                                officialSite={search.officialSite}
+                                                network={search.network}
+                                                webChannel={search.webChannel}
+                                                image={search.image}
+                                                summary={search.summary}
+                                                Button={() => (
+                                                    <button
+                                                        onClick={() => this.deleteSearch(search._id)}
+                                                        className="btn btn-danger"
+                                                    >Delete Save
+                                                    </button>
+                                                )}
+                                            />
+                                        ))}
+                                    </div>
+                                ) : (
+                                  <h2>No Saved Searches</h2>  
+                                )}
+                            </Card>
+                        </Col>
+                    </Row>
                 </div>
             </div>
         );
