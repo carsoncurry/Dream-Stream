@@ -26,6 +26,11 @@ h4, h5 {
     font-weight: bold;
 }
 
+h6 {
+    margin-top: 25px;
+    text-align: right;
+}
+
 .modal-button {
     display: flex;
     align-items: center;
