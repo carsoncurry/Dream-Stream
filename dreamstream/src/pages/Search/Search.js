@@ -106,28 +106,6 @@ class Search extends Component {
 
 
                 <div className="row">
-<<<<<<< HEAD
-                <Card className="grey lighten-2">
-                    <h4>Search Results</h4>
-                    {this.state.search.map(search =>
-                        <div key={search.id} >
-                            <Row>
-                                <h3 id="show-name">{search.name}</h3>
-                            </Row>
-                            <Row className="show-info">
-                                <img className="col l3" id="show-image" src={search.image.original} alt="official"/>
-                                <div className="col l7 offset-l1">
-                                    <h5 id="show-source">Streaming Channel: {search.webChannel ? search.webChannel.name : "unavailable"}</h5>
-                                    <h6 id="show-network">Original Network: {search.network ? search.network.name : "unavailable"}</h6>
-                                    <h6 id="show-website">Official Website: {search.officialSite}</h6>
-                                    <h6 id="show-status">Is It Running? {search.status}</h6>
-                                    <h6 id="show-genre">Genre(s): {search.genres.join(" / ")}</h6>
-                                    <div id="show-summary">Summary: {search.summary}</div>
-                                    <button className="waves-effect waves-light btn btn-small light-blue" onClick={this.saveSearch}>Save This Show</button>
-                                </div>
-                            </Row>
-                        </div>
-=======
                     <Card className="grey lighten-2">
                         <h4>Search Results</h4>
                         {this.state.search.map(search =>
@@ -145,11 +123,10 @@ class Search extends Component {
                                         <h6 id="show-genre">Genre(s): {search.genres.join(" / ")}</h6>
                                         {/* <div id="show-summary">Summary: {search.summary}</div> */}
                                         <div dangerouslySetInnerHTML={{ __html: search.summary }} />
-                                        <button className="waves-effect waves-light btn btn-small light-blue">Save This Show</button>
+                                        <button className="waves-effect waves-light btn btn-small light-blue" onClick={this.saveSearch}>Save This Show</button>
                                     </div>
                                 </Row>
                             </div>
->>>>>>> 47c6319a045fdfa1739025a888bd7055e3aaae54
                         )}
 
                     </Card>

@@ -8,7 +8,7 @@ export default {
    return axios.get("/api/search/" + id);
  },
  saveSearch: function(body) {
-   return axios.post("/api/search/save", body)
+   return axios.post("/api/search/save", body);
  },
  deleteSearch: function(id) {
    return axios.delete("/api/profile/" + id);
