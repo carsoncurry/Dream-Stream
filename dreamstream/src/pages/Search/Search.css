@@ -1,6 +1,10 @@
 #show-type, #show-network, #show-website, #show-genre, #show-summary, #show-status {
     margin-top: 10px;
-    color: black;
+    color: white;
+    text-align: left;
+}
+
+#show-source {
     text-align: left;
 }
 
@@ -10,6 +14,11 @@
 
 .show-info {
     display: inline-block;
+    background-color: none;
+    background: transparent;
+    color: whitesmoke;
+    border: none;
+    box-shadow: none;
 }
 
 button {

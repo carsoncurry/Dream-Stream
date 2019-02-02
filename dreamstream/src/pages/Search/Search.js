@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardTitle, Row } from 'react-materialize';
+import { Card, CardTitle, Row, Toast } from 'react-materialize';
 import API from "../../utils/API"
 import './Search.css';
 
@@ -31,13 +31,15 @@ class Search extends Component {
             language: search.language,
             genres: search.genres,
             officialSite: search.officialSite,
-            network: search.network.name,
-            webChannel: search.webChannel.name,
+            network: search.network ? search.network.name : "unavailable",
+            webChannel: search.webChannel ? search.webChannel.name : "unavailable",
             image: search.image.original,
             summary: search.summary
         };
 
         console.log(saveBody);
+
+        alert('Thanks! This show has been added to your profile!');
 
         API.saveSearch(saveBody)
             .then(data => console.log(data, "search has been saved"))
@@ -49,7 +51,6 @@ class Search extends Component {
             }
             )
     };
-
 
     getNewSearch = () => {
         API.getSearches(this.state.query)
@@ -80,13 +81,11 @@ class Search extends Component {
         console.log("submit")
     };
 
-
-
     render() {
         return (
 
             <div className="container home">
-                <Card className='medium black center'
+                <Card className='large grey darken-4 center z-depth-1'
                     header={<CardTitle image='https://i.gifer.com/DMV.gif'>
                         <h4 className="white-text center">Search the Streams</h4>
                     </CardTitle>}>
@@ -106,14 +105,15 @@ class Search extends Component {
 
 
                 <div className="row">
-                    <Card className="grey lighten-2">
-                        <h4>Search Results</h4>
+                    <Card className="transparent">
+                        <h4 className="white-text">Search Results</h4>
                         {this.state.search.map(search =>
                             <div key={search.id} >
                                 <Row>
-                                    <h3 id="show-name">{search.name}</h3>
+                                    <h3 id="show-name" className="white-text">{search.name}</h3>
                                 </Row>
-                                <Row class="show-info">
+                                <div class="show-info white-text">
+                                    <Row>
                                     <img className="col l3" id="show-image" src={search.image.original} alt="official" />
                                     <div className="col l7 offset-l1">
                                         <h5 id="show-source">Streaming Channel: {search.webChannel ? search.webChannel.name : "unavailable"}</h5>
@@ -121,11 +121,13 @@ class Search extends Component {
                                         <h6 id="show-website">Official Website: {search.officialSite}</h6>
                                         <h6 id="show-status">Is It Running? {search.status}</h6>
                                         <h6 id="show-genre">Genre(s): {search.genres.join(" / ")}</h6>
-                                        {/* <div id="show-summary">Summary: {search.summary}</div> */}
                                         <div dangerouslySetInnerHTML={{ __html: search.summary }} />
-                                        <button className="waves-effect waves-light btn btn-small light-blue">Save This Show</button>
                                     </div>
-                                </Row>
+                                    </Row>
+                                    <Row className="toast-row">
+                                        <Toast id="toast" toast="This show has been added to your profile!" className="waves-effect waves-light light-blue col 6lg" onClick={this.saveSearch}>Save This Show</Toast>
+                                    </Row>
+                                </div>
                             </div>
                         )}
 
