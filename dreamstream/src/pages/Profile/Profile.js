@@ -56,19 +56,22 @@ class Profile extends Component {
                     </Row>
                     <Row className="white-text flow-text">
                         <img id="profile-pic" src={profile.picture} alt="profile" />
-                        Hi, {profile.nickname}! Welcome to your personal DreamStream page. 
-                        This is where you can add or remove streaming services to your monthly budget. 
+                        Hi, {profile.nickname}! Welcome to your personal DreamStream profile page. 
+                        This is where you can add or remove streaming services to your monthly budget,
+                        see how much you're saving by switching from cable
+                        and take a look at past show searches to see what streaming serices best match you! 
                     </Row>
 
-                    <Row className="col l12">
+                    <Row className="modal-row">
                         <Modal
                         header="My Monthly Subscription Costs"
-                        className="grey lighten-4 col l4"
+                        className="grey lighten-4"
                         fixedFooter
                         trigger={<Button className="budget-btn btn-large waves-effect waves-light light-blue white-text"><i className="material-icons medium">attach_money</i>My Monthly Budget</Button>}>
                             <div className="col l4">
                                 <Autocomplete
                                     title='Streaming Services'
+                                    className="streaming-list"
                                     data={
                                         {
                                             'Amazon Prime': null,
@@ -125,7 +128,7 @@ class Profile extends Component {
                         </Modal>
                         <Modal
                             header="My Monthly Subscription Costs"
-                            className="grey lighten-4 col l4"
+                            className="grey lighten-4"
                             fixedFooter
                             trigger={<Button className="budget-btn btn-large waves-effect waves-light light-blue white-text"><i className="material-icons medium">save</i>My Saved Searches</Button>}>
                             <Row>
